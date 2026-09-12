@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --panel: #1f1f22;
+  --panel-soft: #25252a;
+  --panel-strong: #313138;
+  --text: #f5f7fb;
+  --muted: #a9acb6;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --accent: #8ab4ff;
+  --accent-strong: #5a8eff;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+html,
+body,
+[class*="css"] {
+  font-family: "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+::selection {
+  background: rgba(138, 180, 255, 0.95);
+  color: #081018;
+}
+
+.stApp {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(138, 180, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, #050507 0%, var(--bg) 60%, #09090b 100%);
+  color: var(--text);
+}
+
+header[data-testid="stHeader"],
+#MainMenu,
+footer {
+  visibility: hidden;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+  background: transparent;
+}
+
+[data-testid="stSidebar"] {
+  background: rgba(28, 28, 31, 0.98);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-testid="stSidebar"] * {
+  color: var(--text) !important;
+}
+
+.block-container {
+  max-width: 1380px;
+  padding-top: 1.4rem;
+  padding-bottom: 8rem;
+}
+
+.sidebar-brand-wrap,
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sidebar-brand {
+  font-size: 2.15rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  transform: rotate(45deg);
+  border-radius: 7px;
+  background: linear-gradient(180deg, #9fd0ff 0%, #6b6cff 100%);
+  box-shadow: 0 0 20px rgba(138, 180, 255, 0.34);
+}
+
+.brand-mark span {
+  position: absolute;
+  inset: 5px;
+  border-radius: 4px;
+  background: rgba(7, 7, 10, 0.8);
+}
+
+.brand-mark-large {
+  width: 18px;
+  height: 18px;
+}
+
+.sidebar-section,
+.sidebar-footer {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  margin: 1.2rem 0 0.55rem;
+}
+
+.topbar {
+  max-width: 1120px;
+  margin: 0.2rem auto 1rem;
+}
+
+.topbar-brand {
+  font-size: 2.35rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.topbar-subtitle {
+  color: var(--muted);
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.conversation-title {
+  max-width: 1120px;
+  margin: 0 auto 0.8rem;
+  text-align: center;
+  color: rgba(245, 247, 251, 0.9);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.welcome-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7.25rem 0 1.3rem;
+}
+
+.welcome-kicker {
+  color: var(--text);
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.welcome-title {
+  color: var(--text);
+  font-size: clamp(3.9rem, 6.6vw, 5.9rem);
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  max-width: 880px;
+}
+
+.status-strip {
+  max-width: 980px;
+  margin: 0.6rem auto 0.3rem;
+}
+
+.home-composer-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.home-toolbar-row {
+  max-width: 1120px;
+  margin: -1.2rem auto 1.1rem;
+}
+
+.attach-chip {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.2rem 0.4rem 0 0;
+  padding: 0.42rem 0.88rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+.thread-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 0 8rem;
+}
+
+.user-bubble {
+  margin: 0.8rem 0 1rem auto;
+  max-width: 70%;
+  padding: 0.95rem 1.3rem;
+  border-radius: 26px;
+  background: #2b2d31;
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.assistant-mark {
+  width: 22px;
+  height: 22px;
+  margin-top: 0.35rem;
+  position: relative;
+}
+
+.assistant-mark span {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0% 50%, 37% 37%);
+  background: linear-gradient(180deg, #8bc0ff 0%, #4e7dff 100%);
+  box-shadow: 0 0 18px rgba(138, 180, 255, 0.26);
+}
+
+.assistant-copy {
+  padding: 0.3rem 0 1.6rem;
+}
+
+.assistant-copy p,
+.assistant-copy li,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] div,
+.stCaption,
+.stCaption p {
+  color: var(--text) !important;
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+[data-testid="stMarkdownContainer"] a {
+  color: var(--accent) !important;
+}
+
+[data-testid="stMarkdownContainer"] pre,
+[data-testid="stMarkdownContainer"] code {
+  background: #121216 !important;
+  color: #eef2ff !important;
+  border-radius: 16px !important;
+}
+
+.stTextInput label,
+.stTextArea label,
+.stFileUploader label,
+.stToggle label,
+.stPopover button p,
+.stExpander label {
+  color: var(--muted) !important;
+}
+
+.stTextInput input,
+.stFileUploader section,
+.stFileUploader div[data-testid="stFileUploaderDropzone"] {
+  background: var(--panel) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 28px !important;
+}
+
+.stTextArea [data-baseweb="textarea"] {
+  background: var(--panel) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 40px !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  padding-bottom: 0.75rem !important;
+}
+
+.stTextArea textarea {
+  min-height: 148px !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 2.8rem !important;
+  padding-left: 1.35rem !important;
+  padding-right: 1.35rem !important;
+  font-size: 1.15rem !important;
+  line-height: 1.55 !important;
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+}
+
+.stButton > button,
+[data-testid="stBaseButton-secondary"],
+[data-testid="stBaseButton-primary"] {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 999px !important;
+  min-height: 2.8rem !important;
+  box-shadow: none !important;
+}
+
+.stButton > button:hover,
+[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stBaseButton-primary"]:hover {
+  border-color: var(--border-strong) !important;
+  background: var(--panel-soft) !important;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+  justify-content: flex-start !important;
+  border-radius: 18px !important;
+  padding-left: 0.95rem !important;
+}
+
+.main .stButton > button,
+.main [data-testid="stBaseButton-secondary"],
+.main [data-testid="stBaseButton-primary"] {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #d9dde7 !important;
+  min-height: 3rem !important;
+}
+
+.main .stButton > button:hover,
+.main [data-testid="stBaseButton-secondary"]:hover,
+.main [data-testid="stBaseButton-primary"]:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-testid="stPopoverContent"] {
+  background: rgba(24, 24, 27, 0.98) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 22px !important;
+  color: var(--text) !important;
+}
+
+[data-testid="stExpander"] {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 18px !important;
+}
+
+[data-testid="stExpander"] details summary p {
+  color: var(--text) !important;
+}
+
+[data-testid="stChatInput"] {
+  max-width: 1040px;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.2rem;
+  width: min(1040px, calc(100vw - 3rem));
+  z-index: 12;
+}
+
+[data-testid="stChatInput"] > div {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 32px !important;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+}
+
+[data-testid="stChatInput"] textarea,
+[data-testid="stChatInput"] input {
+  color: var(--text) !important;
+  caret-color: var(--text) !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder,
+[data-testid="stChatInput"] input::placeholder {
+  color: var(--muted) !important;
+}
+
+.docked-tools {
+  max-width: 1040px;
+  margin: 0 auto 0.55rem;
+}
+
+.main .stMarkdown p,
+.main [data-testid="stMarkdownContainer"] p,
+.main [data-testid="stMarkdownContainer"] li,
+.main .stCaption p {
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+}
+
+.stAlert {
+  max-width: 1040px;
+  margin: 0.4rem auto;
+  background: rgba(138, 180, 255, 0.08) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(138, 180, 255, 0.15) !important;
+}
+
+@media (max-width: 900px) {
+  .block-container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .welcome-title {
+    font-size: 2.6rem;
+  }
+
+  .user-bubble {
+    max-width: 90%;
+  }
+
+  [data-testid="stChatInput"] {
+    width: calc(100vw - 1rem);
+    bottom: 0.6rem;
+  }
+}
